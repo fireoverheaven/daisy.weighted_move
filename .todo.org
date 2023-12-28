@@ -1,0 +1,8 @@
+* FEAT File Logging
+** [ ] STDOUT + File log
+** [ ] Special log for files skipped, etc.
+
+* FEAT yaml config
+  - log locations
+  - replace weightdir file
+  - config when to die
