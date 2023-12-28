@@ -15,6 +15,7 @@ clean:
 	-rm main
 	-rm go.mod
 	-rm go.sum
+	-rm weighted_move
 
 push: clean
 	git add -A
