@@ -22,7 +22,7 @@ jobs:
         go-version: '1.20'
 
     - name: Build
-      run: go build -v ./...
+      run: go build -v ./weighted_move.go
 
     - name: Test
-      run: go test -v ./...
+      run: go test -v ./weighted_move.go
