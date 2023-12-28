@@ -6,3 +6,7 @@
   - log locations
   - replace weightdir file
   - config when to die
+
+* IDEA File Organization Suite
+** FEAT Duplicate Checker
+** FEAT File Index/DB
