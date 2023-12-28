@@ -20,7 +20,7 @@ clean:
 	-rm go.sum
 	-rm weighted_move
 
-push: clean
+push: mod
 	git add -A
 	-git commit -m "update"
 	-git push
