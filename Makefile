@@ -2,17 +2,20 @@
 all: clean mod build
 
 build:
-	go build weighted_move.go && echo "build"
+	go build weighted_move.go
 
-mod:
-	-go mod init github.com/fireoverheaven/daisy.weighted_move && echo "mod :: init"
-	-go mod tidy && echo "mod :: tidy"
-	-go get github.com/jmcvetta/randutil  && echo "get :: randutil"
-	-go get github.com/stretchr/testify && echo "get :: testify"
-	-go get -u all && echo "get :: -u all"
+mod_init:
+	-go mod init github.com/fireoverheaven/daisy.weighted_move
+	-go mod tidy
+	
+mod_deps:
+	-go get github.com/jmcvetta/randutil
+	-go get github.com/lmittmann/tint
+	-go get -u all
+
+mod: mod_init mod_deps
 
 clean:
-	-rm main
 	-rm go.mod
 	-rm go.sum
 	-rm weighted_move

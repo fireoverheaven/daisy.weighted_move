@@ -10,8 +10,10 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/jmcvetta/randutil"
+	"github.com/lmittmann/tint"
 )
 
 var (
@@ -23,7 +25,12 @@ var (
 func main() {
 	BUFFERSIZE = (1024 * 100)
 	handler = slog.NewJSONHandler(os.Stdout, nil)
-	logger = slog.New(handler)
+	logger = slog.New(
+		tint.NewHandler(os.Stdout, &tint.Options{
+			Level:      slog.LevelDebug,
+			TimeFormat: time.Kitchen,
+		}),
+	)
 	slog.SetDefault(logger)
 
 	weightedRoots := parse_weightdir_file(os.Args[1])
